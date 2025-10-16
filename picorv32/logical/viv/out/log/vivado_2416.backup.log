@@ -1,0 +1,1258 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 16 00:45:51 2025
+# Process ID         : 2416
+# Current directory  : D:/Abidul_Qohar/picorv32_2/picorv32
+# Command line       : vivado.exe -mode batch -source logical/viv/tcl/build.tcl -log logical/viv/out/log/vivado.log -journal logical/viv/out/log/vivado.jou
+# Log file           : D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/log/vivado.log
+# Journal file       : D:/Abidul_Qohar/picorv32_2/picorv32\logical/viv/out/log/vivado.jou
+# Running On         : Abid
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8254 MB
+# Swap memory        : 24080 MB
+# Total Virtual      : 32335 MB
+# Available Virtual  : 16806 MB
+#-----------------------------------------------------------
+source logical/viv/tcl/build.tcl
+# source logical/viv/tcl/set_variables.tcl
+## set board_name "basys3"
+## set fpga_part "xc7a35tcpg236-1"
+## set project_name "picorv32"
+## set top_level "picorv32_system"
+## set top_level_tb "tb_${top_level}.v"
+## set dir_rtl "logical/rtl"
+## set dir_tb "logical/tb"
+## set dir_xdc "logical/viv/xdc"
+## set dir_out "logical/viv/out"
+## set dir_log "logical/viv/out/log"
+## set dir_report "logical/viv/res/report"
+## set dir_bitstream "logical/viv/res"
+## set dir_origin [file normalize "."]
+## puts "INFO: dir_origin is  $dir_origin"
+INFO: dir_origin is  D:/Abidul_Qohar/picorv32_2/picorv32
+## set filename_xdc "${board_name}_${project_name}.xdc"
+## set filename_bitstream "${board_name}_${project_name}.bit"
+# set path_report $dir_origin/$dir_report
+# set path_bitstream $dir_origin/$dir_bitstream
+# set_part $fpga_part
+INFO: [Coretcl 2-1500] The part has been set to 'xc7a35tcpg236-1' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+set_part: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 501.262 ; gain = 217.176
+# proc get_verilog_files {dir} {
+#     set files {}
+#     foreach f [glob -nocomplain -directory $dir *] {
+#         if {[file isdirectory $f]} {
+#             set files [concat $files [get_verilog_files $f]]
+#         } elseif {[string match *.v $f]} {
+#             lappend files $f
+#         }
+#     }
+#     return $files
+# }
+# set all_verilog_files [get_verilog_files [file join $dir_origin $dir_rtl]]
+# read_verilog $all_verilog_files
+# read_xdc "$dir_origin/$dir_xdc/$filename_xdc"
+# synth_design -top $top_level
+Command: synth_design -top picorv32_system
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6552
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1179.262 ; gain = 493.059
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'picorv32_system' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:1]
+INFO: [Synth 8-6157] synthesizing module 'picorv32_axi' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2523]
+	Parameter STACKADDR bound to: 4096 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'picorv32_axi_adapter' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2737]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_axi_adapter' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2737]
+INFO: [Synth 8-6157] synthesizing module 'picorv32' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:62]
+	Parameter ENABLE_COUNTERS bound to: 1'b1 
+	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
+	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
+	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
+	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
+	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
+	Parameter TWO_CYCLE_ALU bound to: 1'b0 
+	Parameter COMPRESSED_ISA bound to: 1'b0 
+	Parameter CATCH_MISALIGN bound to: 1'b1 
+	Parameter CATCH_ILLINSN bound to: 1'b1 
+	Parameter ENABLE_PCPI bound to: 1'b0 
+	Parameter ENABLE_MUL bound to: 1'b0 
+	Parameter ENABLE_FAST_MUL bound to: 1'b0 
+	Parameter ENABLE_DIV bound to: 1'b0 
+	Parameter ENABLE_IRQ bound to: 1'b0 
+	Parameter ENABLE_IRQ_QREGS bound to: 1'b1 
+	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
+	Parameter ENABLE_TRACE bound to: 1'b0 
+	Parameter REGS_INIT_ZERO bound to: 1'b0 
+	Parameter MASKED_IRQ bound to: 0 - type: integer 
+	Parameter LATCHED_IRQ bound to: -1 - type: integer 
+	Parameter PROGADDR_RESET bound to: 0 - type: integer 
+	Parameter PROGADDR_IRQ bound to: 16 - type: integer 
+	Parameter STACKADDR bound to: 4096 - type: integer 
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1270]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1316]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1316]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1499]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1499]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1585]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1585]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1585]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1585]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1585]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:62]
+WARNING: [Synth 8-7071] port 'mem_la_read' of module 'picorv32' is unconnected for instance 'picorv32_core' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+WARNING: [Synth 8-7071] port 'mem_la_write' of module 'picorv32' is unconnected for instance 'picorv32_core' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+WARNING: [Synth 8-7071] port 'mem_la_addr' of module 'picorv32' is unconnected for instance 'picorv32_core' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+WARNING: [Synth 8-7071] port 'mem_la_wdata' of module 'picorv32' is unconnected for instance 'picorv32_core' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+WARNING: [Synth 8-7071] port 'mem_la_wstrb' of module 'picorv32' is unconnected for instance 'picorv32_core' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+WARNING: [Synth 8-7023] instance 'picorv32_core' of module 'picorv32' has 27 connections declared, but only 22 given [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2680]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_axi' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:2523]
+WARNING: [Synth 8-7071] port 'trap' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'mem_axi_awprot' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'mem_axi_arprot' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_valid' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_insn' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_rs1' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_rs2' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_wr' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_rd' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_wait' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'pcpi_ready' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'irq' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'eoi' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'trace_valid' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7071] port 'trace_data' of module 'picorv32_axi' is unconnected for instance 'cpu' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+WARNING: [Synth 8-7023] instance 'cpu' of module 'picorv32_axi' has 32 connections declared, but only 17 given [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:97]
+INFO: [Synth 8-6157] synthesizing module 'axi_rom' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_rom.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'axi_rom' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_rom.v:1]
+INFO: [Synth 8-6157] synthesizing module 'axi_ram' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'axi_ram' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_gpio_wrapper' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:1]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_slave' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi4_lite_slave.v:1]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi4_lite_slave.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_slave' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi4_lite_slave.v:1]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/gpio.v:1]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/gpio.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_gpio_wrapper' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_interconnect_m1s3' [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi4_lite_interconnect_m1s3.v:1]
+	Parameter LOW_ADDR0 bound to: 0 - type: integer 
+	Parameter HIGH_ADDR0 bound to: 65535 - type: integer 
+	Parameter LOW_ADDR1 bound to: 268435456 - type: integer 
+	Parameter HIGH_ADDR1 bound to: 268451839 - type: integer 
+	Parameter LOW_ADDR2 bound to: 131072 - type: integer 
+	Parameter HIGH_ADDR2 bound to: 131072 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_interconnect_m1s3' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi4_lite_interconnect_m1s3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_system' (0#1) [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:1]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_firstword_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:394]
+WARNING: [Synth 8-6014] Unused sequential element last_mem_valid_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:395]
+WARNING: [Synth 8-6014] Unused sequential element next_insn_opcode_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:435]
+WARNING: [Synth 8-6014] Unused sequential element mem_la_secondword_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:573]
+WARNING: [Synth 8-6014] Unused sequential element prefetched_high_word_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:574]
+WARNING: [Synth 8-6014] Unused sequential element q_ascii_instr_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:781]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_imm_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:782]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_opcode_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:783]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs1_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:784]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rs2_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:785]
+WARNING: [Synth 8-6014] Unused sequential element q_insn_rd_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:786]
+WARNING: [Synth 8-6014] Unused sequential element dbg_next_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:787]
+WARNING: [Synth 8-6014] Unused sequential element dbg_valid_insn_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:790]
+WARNING: [Synth 8-6014] Unused sequential element cached_ascii_instr_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:795]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_imm_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:796]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_opcode_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:798]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs1_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:801]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rs2_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:802]
+WARNING: [Synth 8-6014] Unused sequential element cached_insn_rd_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:803]
+WARNING: [Synth 8-6014] Unused sequential element dbg_insn_addr_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:807]
+WARNING: [Synth 8-6014] Unused sequential element clear_prefetched_high_word_q_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1295]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rinst_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1408]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_rdata_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1409]
+WARNING: [Synth 8-6014] Unused sequential element set_mem_do_wdata_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1410]
+WARNING: [Synth 8-6014] Unused sequential element alu_out_0_q_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1412]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1415]
+WARNING: [Synth 8-6014] Unused sequential element alu_wait_2_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1416]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1419]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1420]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs1val_valid_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1421]
+WARNING: [Synth 8-6014] Unused sequential element dbg_rs2val_valid_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1422]
+WARNING: [Synth 8-6014] Unused sequential element next_irq_pending_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1442]
+WARNING: [Synth 8-6014] Unused sequential element decoder_trigger_q_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1449]
+WARNING: [Synth 8-6014] Unused sequential element decoder_pseudo_trigger_q_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1451]
+WARNING: [Synth 8-6014] Unused sequential element latched_trace_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1467]
+WARNING: [Synth 8-6014] Unused sequential element irq_active_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1473]
+WARNING: [Synth 8-6014] Unused sequential element irq_delay_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1474]
+WARNING: [Synth 8-6014] Unused sequential element irq_mask_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1475]
+WARNING: [Synth 8-6014] Unused sequential element irq_state_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1477]
+WARNING: [Synth 8-6014] Unused sequential element timer_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1479]
+WARNING: [Synth 8-6014] Unused sequential element current_pc_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1497]
+WARNING: [Synth 8-6014] Unused sequential element irq_pending_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1965]
+WARNING: [Synth 8-6014] Unused sequential element trace_valid_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1454]
+WARNING: [Synth 8-6014] Unused sequential element instr_ecall_ebreak_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1088]
+WARNING: [Synth 8-6014] Unused sequential element pcpi_timeout_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32.v:1472]
+WARNING: [Synth 8-6014] Unused sequential element wr_addr_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:45]
+WARNING: [Synth 8-6014] Unused sequential element wr_strb_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:46]
+WARNING: [Synth 8-7137] Register oLED_reg in module gpio has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/gpio.v:21]
+WARNING: [Synth 8-6014] Unused sequential element read_req_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:90]
+WARNING: [Synth 8-6014] Unused sequential element write_done_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:91]
+WARNING: [Synth 8-6014] Unused sequential element read_done_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:92]
+WARNING: [Synth 8-6014] Unused sequential element read_addr_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:95]
+WARNING: [Synth 8-6014] Unused sequential element write_strb_reg_reg was removed.  [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/gpio/axi4_lite_gpio_wrapper.v:96]
+WARNING: [Synth 8-3848] Net s0_AWREADY in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:40]
+WARNING: [Synth 8-3848] Net s0_WREADY in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:43]
+WARNING: [Synth 8-3848] Net s0_BVALID in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:47]
+WARNING: [Synth 8-3848] Net s0_BRESP in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:48]
+WARNING: [Synth 8-3848] Net s0_RRESP in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:54]
+WARNING: [Synth 8-3848] Net s1_BRESP in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:67]
+WARNING: [Synth 8-3848] Net s1_RRESP in module/entity picorv32_system does not have driver. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/picorv32_system.v:73]
+WARNING: [Synth 8-7129] Port w_DATA[31] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[30] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[29] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[28] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[27] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[26] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[25] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[24] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[23] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[22] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[21] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[20] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[19] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[18] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[17] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_DATA[16] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[31] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[30] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[29] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[28] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[27] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[26] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[25] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[24] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[23] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[22] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[21] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[20] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[19] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[18] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[17] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[16] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[15] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[14] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[13] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[12] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[11] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[10] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[9] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[8] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[7] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[6] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[5] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[4] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[3] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[2] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[1] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_ADDR[0] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[31] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[30] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[29] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[28] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[27] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[26] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[25] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[24] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[23] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[22] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[21] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[20] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[19] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[18] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[17] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[16] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[15] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[14] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[13] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[12] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[11] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[10] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[9] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[8] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[7] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[6] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[5] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[4] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[3] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[2] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[1] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port r_ADDR[0] in module gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_AWPROT[2] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_AWPROT[1] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_AWPROT[0] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_ARPROT[2] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_ARPROT[1] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_ARPROT[0] in module axi4_lite_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[31] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[30] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[29] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[28] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[27] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[26] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[25] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[24] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[23] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[22] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[21] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[20] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[19] in module axi_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port axi_awaddr[18] in module axi_ram is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1474.613 ; gain = 788.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1474.613 ; gain = 788.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1474.613 ; gain = 788.410
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.234 . Memory (MB): peak = 1474.613 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/xdc/basys3_picorv32.xdc]
+Finished Parsing XDC File [D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/xdc/basys3_picorv32.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/xdc/basys3_picorv32.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/picorv32_system_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/picorv32_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1538.293 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1538.293 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1538.293 ; gain = 852.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1538.293 ; gain = 852.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1538.293 ; gain = 852.090
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'mem_state_reg' in module 'picorv32'
+WARNING: [Synth 8-3936] Found unconnected internal register 'rd_addr_reg' and it is trimmed from '12' to '9' bits. [D:/Abidul_Qohar/picorv32_2/picorv32/logical/rtl/axi_ram.v:53]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_ram'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi4_lite_slave'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi4_lite_interconnect_m1s3'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                               00 |                               00
+                 iSTATE0 |                               01 |                               10
+                  iSTATE |                               10 |                               01
+                 iSTATE1 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mem_state_reg' using encoding 'sequential' in module 'picorv32'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              010 |                               00
+                 iSTATE1 |                              100 |                               01
+                 iSTATE0 |                              001 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_ram'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                   WADDR |                           000010 |                              001
+                   WDATA |                           000100 |                              010
+                   WRESP |                           001000 |                              011
+                   RADDR |                           010000 |                              100
+                   RDATA |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi4_lite_slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+                   WRITE |                               01 |                              001
+                    READ |                               10 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi4_lite_interconnect_m1s3'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1538.293 ; gain = 852.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 8     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               36 Bit    Registers := 1     
+	               32 Bit    Registers := 305   
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 82    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 520   
+	   3 Input   32 Bit        Muxes := 259   
+	   6 Input   32 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 6     
+	  97 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1029  
+	   4 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 5     
+	   4 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 15    
+	   6 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 64    
+	   3 Input    1 Bit        Muxes := 5     
+	   7 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 10    
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_rs2_reg[0]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[11]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_rs2_reg[1]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[1]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_rs2_reg[2]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[2]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_rs2_reg[3]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[3]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_rs2_reg[4]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[4]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[31]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[20]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[17]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[16]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[25]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[24]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[22]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[21]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[20]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[27]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[19]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[26]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[18]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[28]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[29]' (FDCE) to 'gpio/gpio/r_DATA_reg[31]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[31]' (FDCE) to 'gpio/gpio/r_DATA_reg[30]'
+INFO: [Synth 8-3886] merging instance 'gpio/gpio/r_DATA_reg[23]' (FDCE) to 'gpio/gpio/r_DATA_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\gpio/gpio/r_DATA_reg[30] )
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[30]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[20]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\decoded_imm_j_reg[0] )
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[15]' (FDE) to 'cpu/picorv32_core/decoded_rs1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[16]' (FDE) to 'cpu/picorv32_core/decoded_rs1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[17]' (FDE) to 'cpu/picorv32_core/decoded_rs1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[18]' (FDE) to 'cpu/picorv32_core/decoded_rs1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[19]' (FDE) to 'cpu/picorv32_core/decoded_rs1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[20]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[21]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[21]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[22]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[22]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[23]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[23]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[24]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[24]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[25]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[25]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[26]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[26]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[27]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[27]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[28]'
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/decoded_imm_j_reg[28]' (FDE) to 'cpu/picorv32_core/decoded_imm_j_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /do_waitirq_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /instr_getq_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /instr_retirq_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpu_state_reg[4] )
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/mem_addr_reg[1]' (FDE) to 'cpu/picorv32_core/mem_addr_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\mem_addr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /latched_compr_reg)
+INFO: [Synth 8-3886] merging instance 'cpu/picorv32_core/reg_next_pc_reg[0]' (FDRE) to 'cpu/picorv32_core/reg_pc_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu/picorv32_core /\cpuregs_reg[0][1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:57 . Memory (MB): peak = 1538.293 ; gain = 852.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:08 . Memory (MB): peak = 1555.688 ; gain = 869.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:01:09 . Memory (MB): peak = 1577.777 ; gain = 891.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:01:18 . Memory (MB): peak = 1604.934 ; gain = 918.730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:01:25 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:01:25 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:25 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:25 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    83|
+|3     |LUT1   |     4|
+|4     |LUT2   |   340|
+|5     |LUT3   |   263|
+|6     |LUT4   |   421|
+|7     |LUT5   |   436|
+|8     |LUT6   |  4289|
+|9     |MUXF7  |  1297|
+|10    |MUXF8  |   580|
+|11    |FDCE   |    40|
+|12    |FDPE   |     4|
+|13    |FDRE   |  9887|
+|14    |FDSE   |    24|
+|15    |IBUF   |    18|
+|16    |OBUF   |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:25 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 101 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:01:23 . Memory (MB): peak = 1797.141 ; gain = 1047.258
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:27 . Memory (MB): peak = 1797.141 ; gain = 1110.938
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.123 . Memory (MB): peak = 1810.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1960 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/xdc/basys3_picorv32.xdc]
+Finished Parsing XDC File [D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/xdc/basys3_picorv32.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1812.609 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 6cb81f54
+INFO: [Common 17-83] Releasing license: Synthesis
+127 Infos, 191 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:34 . Memory (MB): peak = 1812.609 ; gain = 1311.348
+# write_checkpoint -force $dir_out/post_synth.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1812.609 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1812.609 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/post_synth.dcp' has been generated.
+# report_timing_summary -file $path_report/timing_syn.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2016.930 ; gain = 204.320
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2062.910 ; gain = 45.980
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2062.910 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.183 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.206 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1d98de26d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.208 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 50 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1686df2dc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.383 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Retarget | Checksum: 1686df2dc
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 1 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 16fac476c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.456 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Constant propagation | Checksum: 16fac476c
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 5 Sweep | Checksum: 24596eed5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.569 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Sweep | Checksum: 24596eed5
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 24596eed5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.671 . Memory (MB): peak = 2443.648 ; gain = 0.000
+BUFG optimization | Checksum: 24596eed5
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 24596eed5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.689 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Shift Register Optimization | Checksum: 24596eed5
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 24596eed5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.722 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Post Processing Netlist | Checksum: 24596eed5
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.780 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.813 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 9 Finalization | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.815 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               1  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.820 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 189a6b0c6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2443.648 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2443.648 ; gain = 426.719
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14c409686
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1035c2492
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.990 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 191c88953
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1806bfabf
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
+Phase 2.5 Global Place Phase2 | Checksum: 1a687d1d4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1a687d1d4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a687d1d4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 18f96982b
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 17056a16b
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 17056a16b
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 208c47d32
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2ef7702eb
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Ending Placer Task | Checksum: 28435f8f4
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2443.648 ; gain = 0.000
+11 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2443.648 ; gain = 0.000
+# write_checkpoint -force $dir_out/post_place.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/post_place.dcp' has been generated.
+# report_timing -file $path_report/timing_place.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+# phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+3 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: e8369774 ConstDB: 0 ShapeSum: fb7e0529 RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: b448b853 | NumContArr: 354c6f94 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 26ee71d21
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 26ee71d21
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 26ee71d21
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 2443.648 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 13423
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 13423
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 25cba0bbc
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 25cba0bbc
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 2c528f75c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 2c528f75c
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 1344
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+Phase 5.1 Global Iteration 0 | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+Phase 6 Delay and Skew Optimization | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+Phase 7.1 Hold Fix Iter | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.18871 %
+  Global Horizontal Routing Utilization  = 6.2176 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 56.7568%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 49.5495%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 51.4706%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 58.8235%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:23 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 22e0435fb
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 28f9a12cf
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 28f9a12cf
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Total Elapsed time in route_design: 23.284 secs
+
+Phase 12 Post-Route Event Processing
+Phase 12 Post-Route Event Processing | Checksum: 20240eaeb
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 2443.648 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 20240eaeb
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:24 . Memory (MB): peak = 2443.648 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:24 . Memory (MB): peak = 2443.648 ; gain = 0.000
+# write_checkpoint -force $dir_out/post_route.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.944 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2443.648 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2443.648 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/post_route.dcp' has been generated.
+# report_timing_summary -file $path_report/timing_summary
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+# write_bitstream -force $path_bitstream/$filename_bitstream
+Command: write_bitstream -force D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/res/basys3_picorv32.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 6614752 bits.
+Writing bitstream D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/res/basys3_picorv32.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:26 ; elapsed = 00:00:17 . Memory (MB): peak = 2765.543 ; gain = 321.895
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 16 00:48:49 2025...

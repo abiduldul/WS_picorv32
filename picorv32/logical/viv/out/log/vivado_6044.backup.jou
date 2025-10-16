@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 16 00:58:24 2025
+# Process ID         : 6044
+# Current directory  : D:/Abidul_Qohar/picorv32_2/picorv32
+# Command line       : vivado.exe -mode batch -source logical/viv/tcl/build.tcl -log logical/viv/out/log/vivado.log -journal logical/viv/out/log/vivado.jou
+# Log file           : D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/log/vivado.log
+# Journal file       : D:/Abidul_Qohar/picorv32_2/picorv32\logical/viv/out/log/vivado.jou
+# Running On         : Abid
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8254 MB
+# Swap memory        : 24080 MB
+# Total Virtual      : 32335 MB
+# Available Virtual  : 16822 MB
+#-----------------------------------------------------------
+source logical/viv/tcl/build.tcl

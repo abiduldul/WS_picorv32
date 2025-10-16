@@ -1,0 +1,78 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 16 00:49:02 2025
+# Process ID         : 20548
+# Current directory  : D:/Abidul_Qohar/picorv32_2/picorv32
+# Command line       : vivado.exe -mode batch -source logical/viv/tcl/flash.tcl -log logical/viv/out/log/vivado.log -journal logical/viv/out/log/vivado.jou
+# Log file           : D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/out/log/vivado.log
+# Journal file       : D:/Abidul_Qohar/picorv32_2/picorv32\logical/viv/out/log/vivado.jou
+# Running On         : Abid
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8254 MB
+# Swap memory        : 24080 MB
+# Total Virtual      : 32335 MB
+# Available Virtual  : 16851 MB
+#-----------------------------------------------------------
+source logical/viv/tcl/flash.tcl
+# source logical/viv/tcl/set_variables.tcl
+## set board_name "basys3"
+## set fpga_part "xc7a35tcpg236-1"
+## set project_name "picorv32"
+## set top_level "picorv32_system"
+## set top_level_tb "tb_${top_level}.v"
+## set dir_rtl "logical/rtl"
+## set dir_tb "logical/tb"
+## set dir_xdc "logical/viv/xdc"
+## set dir_out "logical/viv/out"
+## set dir_log "logical/viv/out/log"
+## set dir_report "logical/viv/res/report"
+## set dir_bitstream "logical/viv/res"
+## set dir_origin [file normalize "."]
+## puts "INFO: dir_origin is  $dir_origin"
+INFO: dir_origin is  D:/Abidul_Qohar/picorv32_2/picorv32
+## set filename_xdc "${board_name}_${project_name}.xdc"
+## set filename_bitstream "${board_name}_${project_name}.bit"
+# set path_file_bitstream $dir_origin/$dir_bitstream/$filename_bitstream
+# puts "INFO: path_file_bitstream is  $path_file_bitstream"
+INFO: path_file_bitstream is  D:/Abidul_Qohar/picorv32_2/picorv32/logical/viv/res/basys3_picorv32.bit
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 498.480 ; gain = 215.133
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2025.1
+  **** Build date : May  6 2025 at 09:15:36
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 14 2025-02:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 501.465 ; gain = 2.984
+# current_hw_target
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3DBFA
+# set_property PROGRAM.FILE $path_file_bitstream [current_hw_device]
+# program_hw_devices [current_hw_device]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 16 00:49:17 2025...
