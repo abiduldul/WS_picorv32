@@ -9,14 +9,14 @@ VVP 		= vvp
 VIVADO		= vivado -mode batch -source
 
 # directory structure #
-RTL 		= logical/rtl
-TB 			= logical/tb
-SIM 		= logical/sim
-SRC 		= logical/src
-TCL 		= logical/viv/tcl
-XDC 		= logical/viv/xdc
-RES 		= logical/viv/res
-LOG 		= logical/viv/out/log
+RTL 		= rtl
+TB 			= tb
+SIM 		= sim
+SRC 		= src
+TCL 		= viv/tcl
+XDC 		= viv/xdc
+RES 		= viv/res
+LOG 		= viv/out/log
 
 # include file #
 INC 		= $(RTL)/include.vh
