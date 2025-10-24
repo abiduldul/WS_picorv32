@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Oct 24 18:53:33 2025
+# Process ID         : 8464
+# Current directory  : D:/Abidul_Qohar/Github/WS_picorv32/picorv32
+# Command line       : vivado.exe -mode batch -source logical/viv/tcl/build.tcl -log logical/viv/out/log/vivado.log -journal logical/viv/out/log/vivado.jou
+# Log file           : D:/Abidul_Qohar/Github/WS_picorv32/picorv32/logical/viv/out/log/vivado.log
+# Journal file       : D:/Abidul_Qohar/Github/WS_picorv32/picorv32\logical/viv/out/log/vivado.jou
+# Running On         : Abid
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8254 MB
+# Swap memory        : 14495 MB
+# Total Virtual      : 22750 MB
+# Available Virtual  : 8509 MB
+#-----------------------------------------------------------
+source logical/viv/tcl/build.tcl
+# source logical/viv/tcl/set_variables.tcl
+## set board_name "basys3"
+## set fpga_part "xc7a35tcpg236-1"
+## set project_name "picorv32"
+## set top_level "picorv32_system"
+## set top_level_tb "tb_${top_level}.v"
+## set dir_rtl "logical/rtl"
+## set dir_tb "logical/tb"
+## set dir_xdc "logical/viv/xdc"
+## set dir_out "logical/viv/out"
+## set dir_log "logical/viv/out/log"
+## set dir_report "logical/viv/res/report"
+## set dir_bitstream "logical/viv/res"
+## set dir_origin [file normalize "."]
+## puts "INFO: dir_origin is  $dir_origin"
+INFO: dir_origin is  D:/Abidul_Qohar/Github/WS_picorv32/picorv32
+## set filename_xdc "${board_name}_${project_name}.xdc"
+## set filename_bitstream "${board_name}_${project_name}.bit"
+# set path_report $dir_origin/$dir_report
